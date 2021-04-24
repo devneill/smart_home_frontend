@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### ASSUMPTIONS
+
+Sensor readings are ordered chronologically
+Sensor readings can be displayed to the nearest second
+Devices IDs are in order and so new device IDs can increment by 1
