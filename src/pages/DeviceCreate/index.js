@@ -1,9 +1,11 @@
 import { React, useRef } from "react";
-import Layout from "../Layout";
+import Layout from "../../components/Layout";
 import styled from "styled-components";
+import getRandomName from "../../utils/getRandomName";
 
 const StyledFieldset = styled.fieldset`
   display: grid;
+  text-align: left;
   gap: 1rem;
   padding: 20px;
 `;
@@ -15,29 +17,9 @@ const StyledButton = styled.button`
 `;
 
 const DeviceCreate = ({ devices, setDevices }) => {
-  const getRandomName = () => {
-    const names = [
-      "Enrique",
-      "West",
-      "Damien",
-      "Braun",
-      "Ellie",
-      "Osborne",
-      "Cierra",
-      "Vega",
-      "Alden",
-      "Cantrell",
-      "Kierra",
-      "Gentry",
-      "Pierre",
-      "Cox",
-      "Thomas",
-      "Crane",
-    ];
-    const selector = Math.floor(Math.random() * names.length);
-    return `${names[selector]}'s device`;
-  };
+  const input = useRef(null);
   const id = devices[devices.length - 1].id + 1;
+
   const addDevice = (e) => {
     e.preventDefault();
     const deviceName = input.current.value;
@@ -47,22 +29,32 @@ const DeviceCreate = ({ devices, setDevices }) => {
     alert(`${deviceName} added!`);
   };
 
-  const input = useRef(null);
-
   return (
     <>
       <Layout>
         <h1>Add device</h1>
         <form onSubmit={addDevice}>
           <StyledFieldset>
+            <label for="device-name">Device name</label>
             <input
+              id="device-name"
               type="text"
               ref={input}
               required
-              placeholder="Device name"
               defaultValue={getRandomName()}
             />
-            <input type="text" placeholder="Sensor reading" />
+            <label for="reading-value">Reading value</label>
+            <input id="reading-value" type="text" />
+            <label for="reading-date">Time of reading</label>
+            <input id="reading-date" type="date" placeholder="Sensor reading" />
+            <label for="reading-time">Time of reading</label>
+            <input id="reading-time" type="time" placeholder="Sensor reading" />
+            <label for="sensor-select">Choose sensor type</label>
+            <select id="sensor-select">
+              <option>Temperature</option>
+              <option>Humidity</option>
+              <option>Air quality</option>
+            </select>
             {/* add sensor type dropdown and date picker*/}
             <StyledButton type="submit"> Add device</StyledButton>
           </StyledFieldset>

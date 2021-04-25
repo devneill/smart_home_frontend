@@ -16,7 +16,7 @@ export default function DeviceList({ error, isLoaded, devices }) {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <img src={logo} alt="logo" className="loading-logo" />;
+    return <img src={logo} alt="loading-logo" className="loading-logo" />;
   } else {
     return (
       <StyledList>

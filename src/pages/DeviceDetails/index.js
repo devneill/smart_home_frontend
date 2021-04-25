@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import Layout from "../Layout";
+import Layout from "../../components/Layout";
 import logo from "../../assets/images/logo.png";
 import styled from "styled-components";
 

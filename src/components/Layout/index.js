@@ -25,9 +25,8 @@ const ContentStyles = styled.div`
 const StyledHeader = styled.header`
   height: clamp(40px, 3rem, 100px);
   padding: 2rem 1rem 1rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: flex-start;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: var(--grey) solid 1px;
   --cast: 1px;
   box-shadow: var(--cast) var(--cast) 1px var(--grey);
@@ -35,10 +34,18 @@ const StyledHeader = styled.header`
 `;
 
 const StyledLink = styled.a`
+  grid-column: 1;
+  align-self: start;
+  width: 40%;
   &:hover {
     color: var(--orange);
     cursor: pointer;
   }
+`;
+
+const StyledImage = styled.img`
+  grid-column: 2;
+  justify-self: center;
 `;
 
 const Layout = ({ children }) => {
@@ -62,7 +69,7 @@ const Layout = ({ children }) => {
             Back
           </StyledLink>
         )}
-        <img src={logo} alt="logo" />
+        <StyledImage src={logo} alt="logo" />
       </StyledHeader>
       <SiteWrapper>
         <ContentStyles>{children}</ContentStyles>

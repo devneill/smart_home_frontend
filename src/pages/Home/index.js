@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import DeviceList from "../DeviceList";
-import Layout from "../Layout";
+import DeviceList from "../../components/DeviceList";
+import Layout from "../../components/Layout";
 
 const StyledDiv = styled.div`
   display: grid;

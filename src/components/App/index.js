@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "../Home";
-import DeviceDetails from "../DeviceDetails";
-import DeviceCreate from "../DeviceCreate";
-import NotFound from "../NotFound";
+import Home from "../../pages/Home";
+import DeviceDetails from "../../pages/DeviceDetails";
+import DeviceCreate from "../../pages/DeviceCreate";
+import NotFound from "../../pages/NotFound";
 
 function App() {
   const [error, setError] = useState(null);
