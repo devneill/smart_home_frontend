@@ -4,16 +4,19 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --black: #000000;
     --blue: #34495e;
+    --lightblue: #2c3e50;
     --red: #E76F51;
     --orange: #f39c12;
     --yellow: #E9C46A;
     --darkgrey: #415a77;
     --grey: #bdc3c7;
+    --lightgrey: #ecf0f1;
     --white: #fff;
   }
 
   body {
     font-size: 2rem;
+    background-color: var(--lightgrey);
   }
 
   h1 {
@@ -30,9 +33,10 @@ const GlobalStyles = createGlobalStyle`
   fieldset {
     border: solid var(--grey) 1px;
     border-radius: 10px;
-    margin: 15px 0;
+    margin: 2rem 0;
+    background-color: white;
     --cast: 2px;
-    box-shadow: var(--cast) var(--cast) 0 var(--grey);
+    box-shadow: var(--cast) var(--cast) 2px var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -41,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
     border: solid var(--grey) 1px;
     border-radius: 10px;
     --cast: 0px;
-    box-shadow: var(--cast) var(--cast) 0 var(--grey);
+    box-shadow: var(--cast) var(--cast) 2px var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   &:focus {
     outline: none;
@@ -65,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 10px;
     cursor: pointer;
     --cast: 2px;
-    box-shadow: var(--cast) var(--cast) 0 var(--grey);
+    box-shadow: var(--cast) var(--cast) 2px var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.2);
     transition: all 0.2s;
     &:hover {

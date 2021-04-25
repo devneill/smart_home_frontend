@@ -9,7 +9,6 @@ import { useHistory, useLocation } from "react-router-dom";
 const SiteWrapper = styled.div`
   max-width: 1000px;
   margin: 0.5rem auto 0.5rem auto;
-  background: white;
   padding: 5px;
   padding: clamp(5px, 1vw, 25px);
   @media (max-width: 1100px) {
@@ -19,7 +18,6 @@ const SiteWrapper = styled.div`
 `;
 
 const ContentStyles = styled.div`
-  background: white;
   padding: 1rem;
   text-align: center;
 `;
@@ -30,7 +28,10 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: flex-start;
-  border-bottom: var(--grey) solid 2px;
+  border-bottom: var(--grey) solid 1px;
+  --cast: 1px;
+  box-shadow: var(--cast) var(--cast) 1px var(--grey);
+  background: white;
 `;
 
 const StyledLink = styled.a`

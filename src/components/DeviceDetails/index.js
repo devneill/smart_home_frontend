@@ -15,10 +15,11 @@ import styled from "styled-components";
 const StyledGraph = styled.div`
   border: solid var(--grey) 1px;
   border-radius: 10px;
-  margin: 15px 0;
+  background: white;
+  margin: 2rem 0;
   padding: 0 3rem 0 0;
   --cast: 4px;
-  box-shadow: var(--cast) var(--cast) 0 var(--grey);
+  box-shadow: var(--cast) var(--cast) 2px var(--grey);
   text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
   &:hover {
