@@ -40,13 +40,39 @@ const GlobalStyles = createGlobalStyle`
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   }
 
+  label {
+font-size: 1.5rem;
+  }
+
   input {
     padding: 0.5rem;
+    margin-bottom: 1rem;
     border: solid var(--grey) 1px;
     border-radius: 10px;
     --cast: 0px;
     box-shadow: var(--cast) var(--cast) 2px var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
+  &:focus {
+    outline: none;
+    border-color: var(--orange);
+    --cast: 1px;
+  }
+  }
+
+  select {
+    padding: .5rem;
+    border: solid var(--grey) 1px;
+    border-radius: 10px;
+    --cast: 0px;
+    box-shadow: var(--cast) var(--cast) 2px var(--grey);
+    text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml,<svg width='24' height='20' xmlns='http://www.w3.org/2000/svg'><path d='m0,6l12,12l12,-12l-24,0z'/><path fill='none' d='m0,0l24,0l0,24l-24,0l0,-24z'/></svg>"); 
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 14px;
   &:focus {
     outline: none;
     border-color: var(--orange);
