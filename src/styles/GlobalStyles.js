@@ -2,16 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --black: #000000;
     --blue: #34495e;
-    --lightblue: #2c3e50;
-    --red: #E76F51;
     --orange: #f39c12;
-    --yellow: #E9C46A;
-    --darkgrey: #415a77;
     --grey: #bdc3c7;
     --lightgrey: #ecf0f1;
-    --white: #fff;
   }
 
   body {
@@ -20,14 +14,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    margin: 20px;
     font-size: 3rem;
     text-align: left;
-  }
-
-  h2 {
-    margin: 20px;
-    font-size: 2rem;
   }
 
   fieldset {
@@ -41,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   label {
-font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   input {
@@ -52,11 +40,11 @@ font-size: 1.5rem;
     --cast: 0px;
     box-shadow: var(--cast) var(--cast) 2px var(--grey);
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
-  &:focus {
-    outline: none;
-    border-color: var(--orange);
-    --cast: 1px;
-  }
+    &:focus {
+      outline: none;
+      border-color: var(--orange);
+      --cast: 1px;
+    }
   }
 
   select {
@@ -68,21 +56,19 @@ font-size: 1.5rem;
     text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: transparent;
     background-image: url("data:image/svg+xml,<svg width='24' height='20' xmlns='http://www.w3.org/2000/svg'><path d='m0,6l12,12l12,-12l-24,0z'/><path fill='none' d='m0,0l24,0l0,24l-24,0l0,-24z'/></svg>"); 
     background-repeat: no-repeat;
-    background-position-x: 95%;
+    background-position-x: 97%;
     background-position-y: 14px;
-  &:focus {
-    outline: none;
-    border-color: var(--orange);
-    --cast: 1px;
-  }
+    &:focus {
+      border-color: var(--orange);
+      --cast: 1px;
+    }
   }
 
   a {
     display: flex;
-    align-items:center;
+    align-items: center;
   }
 
   button {
