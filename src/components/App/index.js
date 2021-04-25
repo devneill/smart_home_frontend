@@ -1,31 +1,60 @@
-import { useHistory } from "react-router-dom";
-import DeviceList from "../DeviceList";
-import Layout from "../Layout";
-import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "../Home";
+import DeviceDetails from "../DeviceDetails";
+import DeviceCreate from "../DeviceCreate";
+import NotFound from "../NotFound";
 
-const StyledDiv = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 10px;
-`;
+function App() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [devices, setDevices] = useState([]);
 
-function App({ error, isLoaded, devices }) {
-  let history = useHistory();
-
-  const handleClick = () => {
-    history.push(`/device/new`);
-  };
+  useEffect(() => {
+    fetch("https://canary-homework-test.herokuapp.com/devices")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setDevices(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
 
   return (
-    <>
-      <Layout>
-        <StyledDiv>
-          <h1>All devices</h1>
-          <button onClick={handleClick}>Add device</button>
-        </StyledDiv>
-        <DeviceList error={error} isLoaded={isLoaded} devices={devices} />
-      </Layout>
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Home
+              error={error}
+              isLoaded={isLoaded}
+              devices={devices}
+              setDevices={setDevices}
+            />
+          )}
+        />
+        <Route
+          path="/device/new"
+          render={() => (
+            <DeviceCreate devices={devices} setDevices={setDevices} />
+          )}
+        />
+        <Route
+          path="/device/:deviceId"
+          render={({ match }) => (
+            <DeviceDetails match={match} devices={devices} />
+          )}
+        />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

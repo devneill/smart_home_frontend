@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Router from "./components/Router";
+import ErrorBoundary from "./components/ErrorBoundary";
+import App from "./components/App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById("root")
 );
