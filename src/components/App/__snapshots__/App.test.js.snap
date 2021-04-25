@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-jRQAMF cNPwjv"
+  >
+    <img
+      alt="logo"
+      class="sc-iCfLBT jTrKCv"
+      src="logo.png"
+    />
+  </header>
+  <div
+    class="sc-hKwCoD bOrexo"
+  >
+    <div
+      class="sc-eCImvq gJiXEx"
+    >
+      <div
+        class="sc-furvIG cMtTkC"
+      >
+        <h1>
+          All devices
+        </h1>
+        <button
+          class="sc-pVTma fIxQiW"
+        >
+          Add device
+        </button>
+      </div>
+      <img
+        alt="loading-logo"
+        class="loading-logo"
+        src="logo.png"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

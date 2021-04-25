@@ -6,8 +6,14 @@ import Layout from "../../components/Layout";
 
 const StyledDiv = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
+`;
+
+const StyledButton = styled.button`
+  white-space: nowrap;
+  justify-self: end;
+  width: clamp(175px, 60%, 100%);
 `;
 
 function Home({ error, isLoaded, devices }) {
@@ -21,7 +27,7 @@ function Home({ error, isLoaded, devices }) {
     <Layout>
       <StyledDiv>
         <h1>All devices</h1>
-        <button onClick={handleClick}>Add device</button>
+        <StyledButton onClick={handleClick}>Add device</StyledButton>
       </StyledDiv>
       <DeviceList error={error} isLoaded={isLoaded} devices={devices} />
     </Layout>

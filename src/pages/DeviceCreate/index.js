@@ -13,7 +13,8 @@ const StyledFieldset = styled.fieldset`
 const StyledButton = styled.button`
   margin-left: auto;
   margin-right: auto;
-  max-width: 33%;
+  white-space: nowrap;
+  width: clamp(175px, 30%, 30%);
 `;
 
 const DeviceCreate = ({ devices, setDevices }) => {
